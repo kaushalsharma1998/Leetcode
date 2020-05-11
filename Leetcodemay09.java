@@ -1,5 +1,5 @@
 //same as is valid square:
-public class Leetcodemay9 {
+public class Leetcodemay09 {
 
 	 public boolean isPerfectSquare(int num) {
 	        if(num==1)

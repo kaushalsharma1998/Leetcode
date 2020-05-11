@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //
 //s = "loveleetcode",
 //return 2.
-public class Leetcodemay5 {
+public class Leetcodemay05 {
 
 	public int firstUniqChar(String s) {
 		int map[]= new int[26];
@@ -27,7 +27,7 @@ public class Leetcodemay5 {
 	 }
 	public static void main(String args[])
 	{
-		Leetcodemay5 lc=  new Leetcodemay5();
+		Leetcodemay05 lc=  new Leetcodemay05();
 		System.out.println(lc.firstUniqChar("lleetcode"));
 	}
 }

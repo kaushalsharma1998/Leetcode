@@ -3,7 +3,7 @@
 //Example 3:
 //Input: root = [1,2,3,null,4], x = 2, y = 3
 //Output: false
-public class Leetcodemay7 {
+public class Leetcodemay07 {
 
 	public class TreeNode {
 		      int val;

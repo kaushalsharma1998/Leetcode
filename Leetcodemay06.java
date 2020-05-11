@@ -9,7 +9,7 @@ import java.util.HashMap;
 //Input: [2,2,1,1,1,2,2]
 //Output: 2
 
-public class Leetcodemay6 {
+public class Leetcodemay06 {
 	public int majorityElement(int[] nums) {
 	     HashMap<Integer, Integer>map=new HashMap<Integer, Integer>();
 	     
@@ -28,7 +28,7 @@ public class Leetcodemay6 {
 	}
 	public static void main(String args[])
 	{
-		Leetcodemay6 lc=  new Leetcodemay6();
+		Leetcodemay06 lc=  new Leetcodemay06();
 		System.out.println(lc.majorityElement(new int[]{-1,2,2,3,2}));
 	}
 }

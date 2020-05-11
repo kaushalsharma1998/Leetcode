@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Leetcodemay2 {
+public class Leetcodemay02 {
 
 	public int numJewelsInStones(String jwl, String stn) {
 		   HashMap<Character,Integer>map=new HashMap<>();   
@@ -18,7 +18,7 @@ public class Leetcodemay2 {
 		    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
- Leetcodemay2 mc=new Leetcodemay2();
+ Leetcodemay02 mc=new Leetcodemay02();
  System.out.println(mc.numJewelsInStones("aA", "aAAB"));
 	}
 
