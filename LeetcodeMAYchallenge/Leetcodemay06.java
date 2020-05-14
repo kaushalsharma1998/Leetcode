@@ -1,3 +1,4 @@
+package LeetcodeMAYchallenge;
 import java.util.HashMap;
 
 //Example 1:

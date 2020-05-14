@@ -1,3 +1,4 @@
+package LeetcodeMAYchallenge;
 //is town_king
 //Input: N = 3, trust = [[1,3],[2,3],[3,1]]
 //Output: -1

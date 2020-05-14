@@ -1,3 +1,4 @@
+package LeetcodeMAYchallenge;
 //same as is valid square:
 public class Leetcodemay09 {
 
