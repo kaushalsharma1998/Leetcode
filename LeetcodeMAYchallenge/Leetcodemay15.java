@@ -2,68 +2,38 @@ package LeetcodeMAYchallenge;
 
 public class Leetcodemay15 {
 
-	class TrieNode {
-        boolean endOfWord;
-       TrieNode[] childrens;
-       TrieNode(){
-           childrens = new TrieNode[26];
-       }
-   }
-class Trie {
+	 public int maxSubarraySumCircular(int[] A) {
+	        int N = A.length;
 
-   /** Initialize your data structure here. */
-   
-   TrieNode root;
-   public Trie() {
-       root = new TrieNode();
-   }
-  
-   /** Inserts a word into the trie. */
-   public void insert(String word) {
-       
-       TrieNode ptr = root;
-       for(int i=0;i<word.length();i++){
-           int index = word.charAt(i) - 'a';
-           if(ptr.childrens[index] == null){
-               ptr.childrens[index] = new TrieNode();
-           }
-           ptr = ptr.childrens[index];
-       }
-       ptr.endOfWord = true;
-   }
-   
-   /** Returns if the word is in the trie. */
-   public boolean search(String word) {
-       TrieNode ptr = root;
-       for(int i=0;i<word.length();i++){
-           int index = word.charAt(i) - 'a';
-           if(ptr.childrens[index] == null){
-               return false;
-           }
-           ptr = ptr.childrens[index];
-       }
-       return ptr.endOfWord;
-   }
-   
-   /** Returns if there is any word in the trie that starts with the given prefix. */
-   public boolean startsWith(String prefix) {
-       TrieNode ptr = root;
-       for(int i=0;i<prefix.length();i++){
-           int index = prefix.charAt(i) - 'a';
-           if(ptr.childrens[index] == null){
-               return false;
-           }
-           ptr = ptr.childrens[index];
-       }
-       return true;
-   }
-}
-	
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	        int ans = A[0], cur = A[0];
+	        for (int i = 1; i < N; ++i) {
+	            cur = A[i] + Math.max(cur, 0);
+	            ans = Math.max(ans, cur);
+	        }
 
-	}
+	        // ans is the answer for 1-interval subarrays.
+	        // Now, let's consider all 2-interval subarrays.
+	        // For each i, we want to know
+	        // the maximum of sum(A[j:]) with j >= i+2
 
+	        // rightsums[i] = A[i] + A[i+1] + ... + A[N-1]
+	        int[] rightsums = new int[N];
+	        rightsums[N-1] = A[N-1];
+	        for (int i = N-2; i >= 0; --i)
+	            rightsums[i] = rightsums[i+1] + A[i];
+
+	        // maxright[i] = max_{j >= i} rightsums[j]
+	        int[] maxright = new int[N];
+	        maxright[N-1] = A[N-1];
+	        for (int i = N-2; i >= 0; --i)
+	            maxright[i] = Math.max(maxright[i+1], rightsums[i]);
+
+	        int leftsum = 0;
+	        for (int i = 0; i < N-2; ++i) {
+	            leftsum += A[i];
+	            ans = Math.max(ans, leftsum + maxright[i+2]);
+	        }
+
+	        return ans;
+	    }
 }
