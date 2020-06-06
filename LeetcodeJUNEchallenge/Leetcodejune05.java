@@ -1,6 +1,6 @@
 package LeetcodeJUNEchallenge;
 
-public class Leetcodejune5 {
+public class Leetcodejune05 {
 
 	class Solution {
 
